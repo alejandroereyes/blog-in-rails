@@ -1,4 +1,4 @@
-class PostController < ApplicationController
+class PostsController < ApplicationController
 
   def index
     render 'index.html.erb', locals: { post: Post.all }
@@ -29,18 +29,14 @@ class PostController < ApplicationController
   end
 
   def create
-    begin
-      new_post = Post.create(post_params)
-      respond_to do |format|
-        format.html do
-          redirect_to :show => 'show', :id=> params[:post][:id]
-        end
-        format.json do
-          render json: new_post
-        end
+    new_post = Post.create(post_params)
+    respond_to do |format|
+      format.html do
+        redirect_to :action => 'show', :id => new_post.id
       end
-    rescue ApplicationController::ParameterMissing => error
-      render json: { error: error.message }, status: 422
+      format.json do
+        render json: new_post
+      end
     end
   end # create
 

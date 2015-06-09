@@ -6,7 +6,7 @@
 <body>
   <header><h1>I make Internet</h1></header>
   <%= render 'nav.html.erb' %>
-    <%= form_for(:post, method: :post) do |form| %>
+    <%= form_for(post) do |form| %>
 
       <div class="title-field">
       <%= form.text_field :title, size: '50x20' %>

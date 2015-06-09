@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   get '/about', to: 'welcome#about'
   resources :welcome
 
-  get '/posts/new', to: 'post#new'
-  get '/posts', to: 'post#posts'
-  resources :post
+
+  resources :posts
 
   root to: 'welcome#index'
 end

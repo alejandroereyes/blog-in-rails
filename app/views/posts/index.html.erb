@@ -9,7 +9,7 @@
   <% post.each do |blog| %>
 
     <div class='title'>
-    <%= link_to "#{blog.title}", controller: 'post', action: 'show', id: blog.id %>
+    <%= link_to "#{blog.title}", controller: 'posts', action: 'show', id: blog.id %>
     </div>
 
     <div class='body'>
