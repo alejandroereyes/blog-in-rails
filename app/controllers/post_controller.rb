@@ -1,5 +1,9 @@
 class PostController < ApplicationController
 
+  def index
+    render 'index.html.erb', locals: { post: Post.all }
+  end
+
   def posts
     'posts.html.erb'
   end
@@ -16,7 +20,7 @@ class PostController < ApplicationController
           render 'show.html.erb', locals: { post: blog_entry }
         end
         format.json do
-          render json: blog_entry
+          redirect_to json: blog_entry
         end
       end
     rescue ApplicationController::ParameterMissing => error
@@ -29,7 +33,7 @@ class PostController < ApplicationController
       new_post = Post.create(post_params)
       respond_to do |format|
         format.html do
-          redirect_to '/posts/#{new_post.id}'
+          redirect_to :show => 'show', :id=> params[:post][:id]
         end
         format.json do
           render json: new_post
