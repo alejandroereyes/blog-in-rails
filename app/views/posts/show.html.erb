@@ -18,7 +18,7 @@
   </div>
 
   <div class='delete-div'>
-
+    <%= button_to('Delete this Post', '/post', method: 'delete', remote: true, data: { confirm: 'You sure, Bub ?', disable_with: 'loading...' }) %>
   </div>
 
 </body>
