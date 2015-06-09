@@ -3,6 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $font: Helvetica;
+$link-color: #34495E;
+
+div {
+  font-family: $font;
+}
 
 div.title-field {
   margin-top: 20px;
@@ -33,6 +38,11 @@ div.title {
   font-family: $font;
   font-size: 18px;
   text-align: center;
+
+  a{
+    color: $link-color;
+    text-decoration: none;
+  }
 }
 
 div.body {
@@ -49,6 +59,10 @@ div.body {
   text-align: center;
   font-size: 12px;
   }
+}
+
+div.my-info {
+  padding: 20px;
 }
 
 
