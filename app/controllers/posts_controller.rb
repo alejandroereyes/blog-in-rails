@@ -14,7 +14,6 @@ class PostsController < ApplicationController
 
   def show
     blog_entry = Post.find(params[:id])
-    begin
       respond_to do |format|
         format.html do
           render 'show.html.erb', locals: { post: blog_entry }
@@ -23,9 +22,6 @@ class PostsController < ApplicationController
           redirect_to json: blog_entry
         end
       end
-    rescue ApplicationController::ParameterMissing => error
-      render json: { error: error.message }, status: 422
-    end
   end
 
   def create

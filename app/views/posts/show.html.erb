@@ -12,6 +12,9 @@
 
   <div class='body'>
     <%= post.body %>
+    <div class='time'>
+      <%= post.created_at.strftime("%b %-d %Y") %>
+    </div>
   </div>
 
   <div class='delete-div'>
