@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/about', to: 'welcome#about'
   resources :welcome
 
+  get '/posts', to: 'post#posts'
   resources :post
 
   root to: 'welcome#index'
