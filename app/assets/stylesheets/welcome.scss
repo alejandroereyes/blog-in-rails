@@ -6,9 +6,14 @@
 $header-color: #27AE60;
 $nav-color: #34495E;
 $nav-font-color: white;
+$body-color: #BDC3C7;
 
 // Font
 $font: Helvetica;
+
+body {
+  background-color: $body-color;
+}
 
 header {
   background-color: $header-color;
@@ -29,4 +34,10 @@ nav {
     text-decoration: none;
     margin-left: 10px;
   }
+}
+
+div.dog-gif {
+  height: 300px;
+  margin-left: 20%;
+  margin-right: 20%;
 }
